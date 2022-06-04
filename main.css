@@ -1,0 +1,20 @@
+.fsy-modifier #masthead-container {
+    opacity: 0.1;
+    margin-top: translateY(-48px);
+    transition: all .2s ease !important;
+}
+
+.fsy-modifier #masthead-container:hover {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all .2s ease !important;
+}
+
+.fsy-modifier #page-manager {
+    margin-top: 0 !important;
+}
+
+.fsy-modifier :is(ytd-watch-flexy[theater] #player-theater-container.ytd-watch-flexy, ytd-watch-flexy[fullscreen] #player-theater-container.ytd-watch-flexy) {
+    height: 100vh;
+    max-height: 200vw;
+}
