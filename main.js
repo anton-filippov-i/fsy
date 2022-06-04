@@ -1,22 +1,33 @@
+var ytdApp = document.querySelector('ytd-app');
 const mutationObserver = new MutationObserver(entries => {
     main();
 });
-function main(trigger){
-    if (/\/watch/.test(location.pathname)) {
-        const video = document.querySelector('#player-container video');
-        const playerContainer = document.querySelector('#player-theater-container');
-
-        if(video){
-        document.querySelector("body").classList.add("fsy-modifier");
+function main(){
+    var ytdApp = document.querySelector('ytd-app');
+    console.dir(ytdApp);
+    const trigger = ytdApp.attributes.length == 0 ? true: false;
+    console.log(trigger);
+    if (trigger) {
+        const video = document.querySelector('video');
+        if (video) {
+            document.querySelector("body").classList.add("fsy-modifier");
+        video.setAttribute('style',`
+        height: auto;
+        max-height: 100%;
+        max-width: 100vw;
+        top:0;
+        left:0;
+        position: relative;
+        `)
         }
-        
-
     } else {
-        console.log('false');
         document.querySelector("body").classList.remove("fsy-modifier");
     }
-    
+}
+function test(){
+    console.log('changed')
 }
 document.onload = main();
-window.resize = main();
-mutationObserver.observe(document.querySelector('head'),{childList: true})
+window.onresize = main();
+// document.addEventListener('click', main());
+mutationObserver.observe(ytdApp, {attributes: true})
