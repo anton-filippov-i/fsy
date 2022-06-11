@@ -1,12 +1,11 @@
 var ytdApp = document.querySelector('ytd-app');
+window.check = 'here';
 const mutationObserver = new MutationObserver(entries => {
-    main();
+    main(ytdApp);
 });
-function main(){
-    var ytdApp = document.querySelector('ytd-app');
-    console.dir(ytdApp);
+function main(ytdApp){
     const trigger = ytdApp.attributes.length == 0 ? true: false;
-    console.log(trigger);
+
     if (trigger) {
         const video = document.querySelector('video');
         if (video) {
@@ -24,10 +23,8 @@ function main(){
         document.querySelector("body").classList.remove("fsy-modifier");
     }
 }
-function test(){
-    console.log('changed')
-}
-document.onload = main();
-window.onresize = main();
-// document.addEventListener('click', main());
+
+window.onresize = main(ytdApp);
+window.onload = main(ytdApp);
+document.body.ontransitionend = main(ytdApp);
 mutationObserver.observe(ytdApp, {attributes: true})

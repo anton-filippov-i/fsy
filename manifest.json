@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "FSY youtube",
     "description": "Full Screen Youtube",
-    "version": "0.1",
+    "version": "0.2",
     "icons": {
         "16": "16.png",
         "48": "48.png",
@@ -11,7 +11,7 @@
     "content_scripts": [
         {
             "matches": [
-                "*://*.youtube.com/watch*"
+                "*://*.youtube.com/*"
             ],
             "css": [
                 "main.css"

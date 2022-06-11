@@ -1,12 +1,48 @@
+:root {
+    --glass-bg: radial-gradient(circle at 0%, rgba(25, 25, 25, 0.7) 0%,rgba(35, 35, 35, 0.5) 100%);
+    --glass-button: rgba(113, 113, 113, 0.5);
+    --glass-shadow: 0px 9px 16px rgba(0, 0, 0, 0.15), 0px 4.08175px 3.57381px rgba(0, 0, 0, 0.09), 0px 2.25252px 1.06402px rgba(0, 0, 0, 0.01);
+    --glass-shadow-2:  0px 9px 54px rgba(0, 0, 0, 0.26), 0px 3.75998px 22.5599px rgba(0, 0, 0, 0.186902), 0px 2.01027px 12.0616px rgba(0, 0, 0, 0.154988), 0px 1.12694px 6.76164px rgba(0, 0, 0, 0.13), 0px 0.598509px 3.59106px rgba(0, 0, 0, 0.105012), 0px 0.249053px 1.49432px rgba(0, 0, 0, 0.0730979);
+    --glass-blur: blur(20px);
+    --glass-outline: 1px solid #00000020;
+    --gradient: linear-gradient(180deg, #FF00E5 0%, #00FFF0 100%);
+    --gradient-ver: linear-gradient(45deg, #FF00E5 0%, #00FFF0 100%);
+    --text-shadow: 0px 1px 2px #00000070;
+}
+
+.fsy-modifier::-webkit-scrollbar {
+    display: none;
+}
 .fsy-modifier #masthead-container {
-    opacity: 0.1;
-    margin-top: translateY(-48px);
+    opacity: 0;
+    transform: translateY(-24px) !important;
     transition: all .2s ease !important;
 }
 
+.fsy-modifier #masthead {
+    right: unset;
+    left: 16px;
+    background: var(--glass-bg) !important;
+    box-shadow: var(--glass-shadow) !important;
+    backdrop-filter: var(--glass-blur) !important;
+    border: 1px solid #ffffff10;
+    border-top: 1px solid #ffffff20;
+    border-bottom: 1px solid #ffffff05;
+    bottom: 70px;
+    text-shadow: var(--text-shadow);
+}
+.fsy-modifier #container.ytd-searchbox, #voice-search-button.ytd-masthead {
+    background: #00000020 !important;
+    background-color: #00000020 !important;
+    backdrop-filter: blur(30px);
+    border: 1px solid #ffffff10;
+}
+.fsy-modifier #search-icon-legacy.ytd-searchbox {
+    border: none !important;
+}
 .fsy-modifier #masthead-container:hover {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) !important;
     transition: all .2s ease !important;
 }
 
