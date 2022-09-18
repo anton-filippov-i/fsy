@@ -20,6 +20,7 @@
     background: var(--glass-bg) !important;
     box-shadow: var(--glass-shadow) !important;
     backdrop-filter: var(--glass-blur) !important;
+    -webkit-backdrop-filter: var(--glass-blur) !important;
     border: 1px solid #ffffff10;
     border-top: 1px solid #ffffff20;
     border-bottom: 1px solid #ffffff05;
@@ -31,7 +32,7 @@
 .fsy-modifier #container.ytd-searchbox, #voice-search-button.ytd-masthead {
     background: #00000020 !important;
     background-color: #00000020 !important;
-    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
     border: 1px solid #ffffff10;
 }
 .fsy-modifier #search-icon-legacy.ytd-searchbox {
