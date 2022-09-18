@@ -22,6 +22,9 @@ function main(ytdApp){
     } else {
         document.querySelector("body").classList.remove("fsy-modifier");
     }
+
+    // set theme color for black safari navbar
+    document.querySelector('[name="theme-color"]').setAttribute('content','#080808');
 }
 
 window.onresize = main(ytdApp);
