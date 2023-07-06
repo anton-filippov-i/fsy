@@ -1,8 +1,8 @@
 :root {
-    --glass-bg: radial-gradient(circle at 0%, rgba(25, 25, 25, 0.7) 0%,rgba(35, 35, 35, 0.5) 100%);
+    --glass-bg: radial-gradient(circle at 100% 50%, rgba(1, 1, 1, 0.88) 0%, rgba(11, 11, 11, 0.88) 100%);
     --glass-button: rgba(113, 113, 113, 0.5);
-    --glass-shadow: 0px 6px 18px rgba(0, 0, 0, 0.08), 0px 1.40595px 4.02054px rgba(0, 0, 0, 0.0476886), 0px 0.369179px 1.19702px rgba(0, 0, 0, 0.0323114);
-    --glass-shadow-2:  0px 9px 54px rgba(0, 0, 0, 0.26), 0px 3.75998px 22.5599px rgba(0, 0, 0, 0.186902), 0px 2.01027px 12.0616px rgba(0, 0, 0, 0.154988), 0px 1.12694px 6.76164px rgba(0, 0, 0, 0.13), 0px 0.598509px 3.59106px rgba(0, 0, 0, 0.105012), 0px 0.249053px 1.49432px rgba(0, 0, 0, 0.0730979);
+    --glass-shadow: 0px 8px 11px -7px rgba(0, 0, 0, 0.6), 0px 1.40595px 2.02054px -0.5px rgba(0, 0, 0, 0.2076886), 0px 0.369179px 0.19702px -0.5px rgba(0, 0, 0, 0.1023114);
+    --glass-shadow-2: 0px 9px 52px rgba(0, 0, 0, 0.20), 0px 3.75998px 22.5599px rgba(0, 0, 0, 0.186902), 0px 2.01027px 12.0616px rgba(0, 0, 0, 0.154988), 0px 1.12694px 6.76164px rgba(0, 0, 0, 0.13), 0px 0.598509px 3.59106px rgba(0, 0, 0, 0.105012), 0px 0.249053px 1.49432px rgba(0, 0, 0, 0.0730979);
     --glass-blur: blur(20px);
     --glass-outline: 1px solid #00000020;
     --gradient: linear-gradient(180deg, #FF00E5 0%, #00FFF0 100%);
@@ -14,40 +14,111 @@
     display: none;
 }
 
+/* .fsy-modifier #masthead-container.ytd-app {
+    height: 240px;
+} */
+
+.fsy-modifier #container.ytd-masthead {
+    padding: 0 10px;
+}
+
 .fsy-modifier #masthead {
     right: unset;
     left: 16px;
-    background: var(--glass-bg) !important;
-    box-shadow: var(--glass-shadow) !important;
+    /* background: linear-gradient(180deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.85) 100%); */
+    background: var(--glass-bg), black;
     backdrop-filter: var(--glass-blur) !important;
     -webkit-backdrop-filter: var(--glass-blur) !important;
-    border: 1px solid #ffffff10;
-    border-top: 1px solid #ffffff20;
-    border-bottom: 1px solid #ffffff05;
+    box-shadow: var(--glass-shadow);
     bottom: 70px;
     text-shadow: var(--text-shadow);
-    transform: translateY(-56px) !important;
-    transition: all .2s ease !important;
+    border-left: 1px solid rgba(255, 255, 255, 0.05);
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transform: translateY(-100px);
+    border-radius: 12px;
+    max-width: 720px;
+    margin: 0 auto;
+    transition: all .3s ease !important;
+    background-blend-mode: multiply;
 }
-.fsy-modifier #container.ytd-searchbox, #voice-search-button.ytd-masthead {
-    background: #00000020 !important;
-    background-color: #00000020 !important;
-    -webkit-backdrop-filter: blur(30px);
-    border: 1px solid #ffffff10;
+
+.fsy-modifier #center.ytd-masthead {
+    flex: 1 !important;
 }
+
+.fsy-modifier #container.ytd-searchbox,
+#voice-search-button.ytd-masthead {
+    background: #00000015 !important;
+    background-color: #00000015 !important;
+    border-left: 1px solid rgba(255, 255, 255, 0.02);
+    border-right: 1px solid rgba(255, 255, 255, 0.02);
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 8px !important;
+}
+
 .fsy-modifier #search-icon-legacy.ytd-searchbox {
     border: none !important;
 }
-.fsy-modifier #masthead-container:hover #masthead {
-    transform: translateY(0) !important;
-    transition: all .2s ease !important;
+
+.fsy-modifier ytd-searchbox.ytd-masthead {
+    margin-left: 0;
+}
+
+.fsy-modifier :is(#search-icon-legacy, #voice-search-button) {
+    display: none !important;
+}
+
+.fsy-modifier.show-menu #masthead {
+    background: var(--glass-bg);
+    transform: translateY(12px) !important;
+    margin-top: 0;
+    transition: all .3s ease !important;
+}
+
+.fsy-modifier ytd-searchbox[desktop-searchbar-style=rounded_corner_borders_light_btn] #container.ytd-searchbox,
+ytd-searchbox[desktop-searchbar-style=rounded_corner_autofocus] #container.ytd-searchbox {
+    margin-left: 0;
+}
+
+.fsy-modifier #end.ytd-masthead {
+    min-width: unset;
+    margin-left: 20px;
 }
 
 .fsy-modifier #page-manager {
     margin-top: 0 !important;
 }
 
-.fsy-modifier :is(ytd-watch-flexy[theater] #player-theater-container.ytd-watch-flexy, ytd-watch-flexy[fullscreen] #player-theater-container.ytd-watch-flexy) {
+.fsy-modifier :is(
+    ytd-watch-flexy[theater] #player-theater-container.ytd-watch-flexy,
+    ytd-watch-flexy[fullscreen] #player-theater-container.ytd-watch-flexy,
+    #player-wide-container.ytd-watch-flexy
+    ) {
     height: 100vh;
     max-height: 100vh;
+}
+
+.fsy-modifier yt-img-shadow.ytd-topbar-menu-button-renderer {
+    margin: 0;
+}
+
+.fsy-modifier video {
+    height: unset !important;
+    max-height: 100%;
+    z-index: 2;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    top: 0 !important;
+}
+
+.fsy-modifier .html5-video-player {
+    display: flex;
+    align-items: center;
+}
+
+.fsy-modifier #background.ytd-masthead {
+    background: transparent;
 }
